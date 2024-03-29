@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container">
+    <h1>Text Analysis Result </h1>
+    <ul class="tech-lists">
+        <li class="tech">Total number of words: <span class="make_italic">{{total_words}}</span></li>
+        <li class="tech">Number of character: <span class="make_italic">{{total_characters}}</span></li>
+        <li class="tech">The most frequent word: <span class="make_italic">{{most_occuring_word}}</span></li>
+    </ul>
+    <table>
+        <tr class="table_heading">
+            <th>WORD</th>
+            <th>WORD COUNT</th>
+        </tr>
+        {% for word_count in word_frequency %}
+        <tr>
+            <td>{{word_count[0]}}</td>
+            <td>{{word_count[1]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
