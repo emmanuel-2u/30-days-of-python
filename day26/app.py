@@ -27,8 +27,9 @@ def result(t_words, t_chars, w_freq, m_occur):
 @app.route('/post', methods=['GET', 'POST'])
 def post():
     name = 'Text Analyzer'
+    url = os.environ.get('BASE_URL', 'http://127.0.0.1:5000/') + 'post'
     if request.method == 'GET':
-         return render_template('post.html', name=name, title=name)
+         return render_template('post.html', name=name, title=name, url=url)
     if request.method =='POST':
         content = request.form['content']
         total_words, total_characters, word_frequency, most_occuring_word = process_content(content)

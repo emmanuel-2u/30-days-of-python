@@ -2,7 +2,7 @@
 {% block content %}
 <div class="container">
     <h1>Text Analyzer</h1>
-    <form action="http://localhost:5000/post" method="POST">
+    <form action="{{url}}" method="POST">
         <div>
             <textarea rows='25' name="content" autofocus placeholder="Write text or copy and paste text to analyse ..."></textarea>
         </div>
